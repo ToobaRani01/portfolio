@@ -39,4 +39,35 @@
       });
     });
   });
+
+  // Mobile Menu Toggle
+  const menuIcon = document.getElementById("menu-icon");
+  const navLinks = document.getElementById("nav-links");
+
+  if (menuIcon && navLinks) {
+    menuIcon.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      const icon = menuIcon.querySelector("i");
+      if (navLinks.classList.contains("active")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+      } else {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
+    });
+
+    // Close menu when a link is clicked
+    const links = navLinks.querySelectorAll("a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        const icon = menuIcon.querySelector("i");
+        if (icon) {
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+    });
+  }
 })();
