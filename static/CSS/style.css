@@ -286,6 +286,89 @@ body {
 }
 
 /* ==========================================
+   EXPERIENCE SECTION STYLES
+   ========================================== */
+.experience {
+    padding: 6rem 8%;
+    background-color: var(--bg-dark);
+}
+
+.experience-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.experience-timeline {
+    margin-top: 3rem;
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid rgba(0, 245, 212, 0.3);
+}
+
+.experience-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+.experience-item:last-child {
+    margin-bottom: 0;
+}
+
+.experience-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    left: -29px;
+    top: 5px;
+    box-shadow: 0 0 10px rgba(0, 245, 212, 0.6);
+}
+
+.experience-content {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.8rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.experience-content:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.experience-content h3 {
+    font-size: 1.35rem;
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.experience-content h4 {
+    font-size: 1.05rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.experience-content h4 span {
+    color: var(--muted-text);
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+.experience-desc {
+    color: rgba(234, 234, 234, 0.82);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.experience-links {
+    margin-top: 1.2rem;
+}
+
+/* ==========================================
    PROJECTS SECTION STYLES
    ========================================== */
 .projects {
