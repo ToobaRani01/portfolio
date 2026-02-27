@@ -653,6 +653,7 @@ body {
     }
 
     .about-section,
+    .experience,
     .projects {
         padding: 4rem 5%;
     }
@@ -663,6 +664,11 @@ body {
     .about-cards-row {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.2rem;
+    }
+
+    .projects-grid,
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .hero-container {
@@ -734,6 +740,34 @@ body {
 
     .contact-card {
         padding: 2rem 1.5rem;
+    }
+
+    .projects-grid,
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Experience Section Adjustments */
+    .experience-timeline {
+        padding-left: 1rem;
+    }
+
+    .experience-item {
+        padding-left: 1rem;
+    }
+
+    .experience-dot {
+        left: -17px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .experience-content {
+        padding: 1.2rem;
+    }
+
+    .experience-content h3 {
+        font-size: 1.2rem;
     }
 }
 
