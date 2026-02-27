@@ -25,7 +25,9 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    body { scroll-behavior: auto; }
+    body {
+        scroll-behavior: auto;
+    }
 }
 
 /* ==========================================
@@ -87,7 +89,11 @@ body {
     width: 100%;
 }
 
-.hero-image { flex: 1; display: flex; justify-content: center; }
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
 
 .image-border {
     padding: 6px;
@@ -102,7 +108,9 @@ body {
     object-fit: cover;
 }
 
-.hero-content { flex: 1; }
+.hero-content {
+    flex: 1;
+}
 
 .hero-content h1 {
     font-family: 'Poppins', sans-serif;
@@ -129,7 +137,10 @@ body {
     transition: all 0.3s ease;
 }
 
-.social-icons a:hover { color: var(--accent); transform: translateY(-3px); }
+.social-icons a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+}
 
 .btn {
     padding: 0.7rem 1.6rem;
@@ -145,7 +156,9 @@ body {
     transition: 0.3s;
 }
 
-.primary:hover { box-shadow: 0 0 20px rgba(0, 245, 212, 0.6); }
+.primary:hover {
+    box-shadow: 0 0 20px rgba(0, 245, 212, 0.6);
+}
 
 /* ==========================================
    SIMPLE REVEAL ANIMATION
@@ -186,9 +199,14 @@ body {
     gap: 3.5rem;
 }
 
-.about-text { max-width: 850px; }
+.about-text {
+    max-width: 850px;
+}
 
-.section-title { font-size: 2.2rem; margin-bottom: 1rem; }
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
 
 .about-description {
     font-size: 1.1rem;
@@ -237,7 +255,18 @@ body {
     margin-bottom: 1.2rem;
 }
 
-.about-card h3 { font-size: 1.1rem; margin-bottom: 0; color: #fff; }
+.about-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    color: #fff;
+}
+
+.about-card-desc {
+    margin-top: 0.85rem;
+    color: rgba(234, 234, 234, 0.78);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
 
 /* Technology Tags (The "Cool" Detail) */
 .stack-tags {
@@ -259,11 +288,19 @@ body {
 /* ==========================================
    PROJECTS SECTION STYLES
    ========================================== */
-.projects { padding: 6rem 8%; }
+.projects {
+    padding: 6rem 8%;
+}
+
+.projects-container,
+.certificates-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
@@ -315,7 +352,9 @@ body {
     color: var(--accent);
 }
 
-.project-info { padding: 1.2rem; }
+.project-info {
+    padding: 1.2rem;
+}
 
 /* AI Badge on Project titles */
 .project-info h3::after {
@@ -344,9 +383,136 @@ body {
 }
 
 /* ==========================================
+   CERTIFICATES SECTION STYLES
+   ========================================== */
+.certificates {
+    padding: 6rem 8%;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+}
+
+.certificate-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+}
+
+.certificate-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transform: scale(1.0);
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.certificate-card:hover .certificate-image img {
+    transform: scale(1.05);
+}
+
+.certificate-image--placeholder {
+    height: 220px;
+    background:
+        radial-gradient(500px 220px at 20% 15%, rgba(0, 245, 212, 0.18), transparent 55%),
+        radial-gradient(420px 220px at 80% 10%, rgba(142, 45, 226, 0.18), transparent 55%),
+        rgba(255, 255, 255, 0.02);
+    display: grid;
+    place-items: center;
+}
+
+.certificate-placeholder {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    color: rgba(234, 234, 234, 0.88);
+}
+
+.certificate-placeholder i {
+    color: var(--accent);
+}
+
+.certificate-info {
+    padding: 1.2rem;
+    text-align: left;
+}
+
+.certificate-info h3 {
+    color: #fff;
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+}
+
+.certificate-issuer {
+    color: rgba(234, 234, 234, 0.82);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+}
+
+.certificate-desc {
+    color: var(--muted-text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.certificate-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.9rem;
+}
+
+.certificate-link {
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 245, 212, 0.22);
+    background: rgba(0, 245, 212, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.certificate-link:hover {
+    transform: translateY(-2px);
+    background: rgba(0, 245, 212, 0.14);
+    border-color: rgba(0, 245, 212, 0.4);
+    box-shadow: 0 0 20px rgba(0, 245, 212, 0.18);
+}
+
+.certificate-link--muted {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: rgba(234, 234, 234, 0.65);
+    pointer-events: none;
+}
+
+/* ==========================================
    CONTACT & FOOTER STYLES
    ========================================== */
-.contact { padding: 6rem 6%; display: flex; justify-content: center; }
+.contact {
+    padding: 6rem 6%;
+    display: flex;
+    justify-content: center;
+}
 
 .contact-card {
     width: 100%;
@@ -365,7 +531,8 @@ body {
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
     background: #121212;
     border: 1px solid #222;
@@ -398,27 +565,38 @@ body {
 
 /* Large Laptops & Desktops */
 @media (max-width: 1200px) {
-    .hero-content h1 { font-size: 2.4rem; }
-    .about-section, .projects { padding: 4rem 5%; }
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+
+    .about-section,
+    .projects {
+        padding: 4rem 5%;
+    }
 }
 
 /* Tablets (iPad, etc.) */
 @media (max-width: 1024px) {
-    .about-cards-row { 
-        grid-template-columns: repeat(2, 1fr); 
+    .about-cards-row {
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.2rem;
     }
-    .hero-container { gap: 2rem; }
+
+    .hero-container {
+        gap: 2rem;
+    }
 }
 
 /* Mobile Devices (Phones) */
 @media (max-width: 768px) {
+
     /* Navbar Adjustment */
     .navbar {
         padding: 1rem 5%;
         flex-direction: column;
         gap: 1rem;
     }
+
     .nav-links {
         gap: 1rem;
         font-size: 0.9rem;
@@ -426,19 +604,26 @@ body {
 
     /* Hero Section - Stack Vertically */
     .hero-container {
-        flex-direction: column-reverse; /* Text first, then image */
+        flex-direction: column-reverse;
+        /* Text first, then image */
         text-align: center;
         padding-top: 2rem;
     }
 
     .image-border img {
-        width: 200px; /* Smaller image for mobile */
+        width: 200px;
+        /* Smaller image for mobile */
         height: 200px;
     }
 
-    .hero-content h1 { font-size: 2rem; }
-    .hero-content h2 { font-size: 1.2rem; }
-    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+
     .social-icons {
         justify-content: center;
         gap: 1.5rem;
@@ -476,6 +661,14 @@ body {
         grid-template-columns: repeat(3, 1fr);
         text-align: center;
     }
-    .hero-content h1 { font-size: 1.8rem; }
-    .btn { width: 100%; } /* Full width buttons for easy tapping */
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Full width buttons for easy tapping */
 }
